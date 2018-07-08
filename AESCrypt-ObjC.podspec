@@ -56,7 +56,7 @@ AESCrypt uses the AES-256-CBC cipher and encodes the encrypted data with base64.
 
   # s.author             = { "William Wang" => "canicelebrate@gmail.com" }
   # Or just: s.author    = "William Wang"
-  s.authors            = { "William Wang" => "canicelebrate@gmail.com", Gurpartap Singh => "hi@gurpartap.com" }
+  s.authors            = { 'William Wang' => 'canicelebrate@gmail.com', 'Gurpartap Singh' => 'hi@gurpartap.com' }
   # s.social_media_url   = "http://twitter.com/William Wang"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
