@@ -343,9 +343,13 @@ static void FixKeyLengths( CCAlgorithm algorithm, NSMutableData * keyData, NSMut
 - (NSData *) _runCryptor: (CCCryptorRef) cryptor result: (CCCryptorStatus *) status
 {
 	size_t bufsize = CCCryptorGetOutputLength( cryptor, (size_t)[self length], true );
-	void * buf = malloc( bufsize );
 	size_t bufused = 0;
-  size_t bytesTotal = 0;
+	size_t bytesTotal = 0;
+	void * buf = malloc( bufsize );
+	if ( buf == NULL )
+	{
+		return ( nil );
+	}
 	*status = CCCryptorUpdate( cryptor, [self bytes], (size_t)[self length], 
                             buf, bufsize, &bufused );
 	if ( *status != kCCSuccess )
